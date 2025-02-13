@@ -111,7 +111,7 @@ import { HiSquares2X2 } from "react-icons/hi2";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
 import User from "./User";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "../../redux/slices/actionSlice";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -139,8 +139,8 @@ const NavButtons = () => {
   const dispatch = useDispatch();
 
   const toggleDropdown = () => setDrop(!drop);
-  const items = 17;
-  const number = items < 10 ? items : "9+";
+  const products = useSelector((state) => state.data.products);
+  const number = products.length < 10 ? products.length : "9+";
 
   return (
     <div className="flex items-center space-x-2 max-sm:space-x-1">
