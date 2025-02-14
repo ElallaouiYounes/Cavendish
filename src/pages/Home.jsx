@@ -7,6 +7,7 @@ import Footer from '../components/home/Footer';
 import Hero from '../components/home/Hero';
 import ShopByCategory from '../components/home/ShopByCategory';
 import MoreToLove from '../components/home/MoreToLove';
+import More from '../components/home/More';
 
 const Home = () => {
 
@@ -20,7 +21,8 @@ const Home = () => {
         {openCategorie && <CatSlider />}
         <Hero />
         <ShopByCategory />
-        <MoreToLove />
+        {/* <MoreToLove /> */}
+        <More />
         <Footer />
     </div>
   )

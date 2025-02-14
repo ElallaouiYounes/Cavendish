@@ -26,6 +26,9 @@ const initialState = {
       quantity: 3,
       price: 2500,
       image: i5,
+      oldPrice: "3000",
+      rating: "4.1",
+      sold: "900+",
     },
     {
       id: 2,
@@ -33,6 +36,9 @@ const initialState = {
       quantity: 1,
       price: 7500,
       image: lap,
+      oldPrice: "8000",
+      rating: "4.8",
+      sold: "600+",
     },
     {
       id: 3,
@@ -40,6 +46,9 @@ const initialState = {
       quantity: 9,
       price: 800,
       image: redd,
+      oldPrice: "850",
+      rating: "4.9",
+      sold: "200+",
     },
     {
       id: 4,
@@ -47,6 +56,9 @@ const initialState = {
       quantity: 1,
       price: 12500,
       image: gd,
+      oldPrice: "14000",
+      rating: "4.8",
+      sold: "300+",
     },
     {
       id: 5,
@@ -54,6 +66,9 @@ const initialState = {
       quantity: 1,
       price: 550,
       image: rm,
+      oldPrice: "700",
+      rating: "4.3",
+      sold: "500+",
     },
     {
       id: 6,
@@ -61,6 +76,9 @@ const initialState = {
       quantity: 1,
       price: 1250,
       image: ck,
+      oldPrice: "1350",
+      rating:"4.2",
+      sold: "700+",
     },
     {
       id: 7,
@@ -68,6 +86,9 @@ const initialState = {
       quantity: 1,
       price: 1400,
       image: sm,
+      oldPrice: "1600",
+      rating:"4.8",
+      sold: "400+",
     },
     {
       id: 8,
@@ -75,6 +96,9 @@ const initialState = {
       quantity: 1,
       price: 7500,
       image: ps,
+      oldPrice: "8000",
+      rating:"4.8",
+      sold: "900+",
     },
     {
       id: 9,
@@ -82,6 +106,9 @@ const initialState = {
       quantity: 1,
       price: 4000,
       image: nt,
+      oldPrice: "5600",
+      rating:"4.9",
+      sold: "600+",
     },
     {
       id: 10,
@@ -89,6 +116,9 @@ const initialState = {
       quantity: 1,
       price: 900,
       image: lh,
+      oldPrice: "1200",
+      rating:"4.2",
+      sold: "300+",
     },
     {
       id: 11,
@@ -96,6 +126,9 @@ const initialState = {
       quantity: 1,
       price: 4200,
       image: rx,
+      oldPrice: "5000",
+      rating:"4.5",
+      sold: "600+",
     },
     {
       id: 12,
@@ -103,6 +136,9 @@ const initialState = {
       quantity: 1,
       price: 22000,
       image: mac,
+      oldPrice: "23000",
+      rating:"4.6",
+      sold: "300+",
     },
   ],
 
