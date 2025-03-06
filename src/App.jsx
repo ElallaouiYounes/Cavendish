@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Notfound from './components/Notfound'
+import Login from './pages/Login'
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Route path="/wishlist" element={<Notfound />} />
       <Route path="/categories" element={<Notfound />} />
       <Route path="/categories/:name" element={<Notfound />} />
-      <Route path="/login" element={<Notfound />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Notfound />} />
       <Route path="/profile" element={<Notfound />} />
       <Route path="/checkout" element={<Notfound />} />

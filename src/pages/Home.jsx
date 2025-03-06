@@ -5,9 +5,8 @@ import CatSlider from '../components/home/CatSlider'
 import { useSelector } from 'react-redux';
 import Footer from '../components/home/Footer';
 import Hero from '../components/home/Hero';
-import ShopByCategory from '../components/home/ShopByCategory';
-import MoreToLove from '../components/home/MoreToLove';
 import More from '../components/home/More';
+import Shopbycategorie from '../components/home/Shopbycategorie';
 
 const Home = () => {
 
@@ -20,8 +19,7 @@ const Home = () => {
         {openCart && <CartSlider  />}
         {openCategorie && <CatSlider />}
         <Hero />
-        <ShopByCategory />
-        {/* <MoreToLove /> */}
+        <Shopbycategorie />
         <More />
         <Footer />
     </div>

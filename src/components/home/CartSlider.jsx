@@ -5,8 +5,8 @@ import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/i
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, deleteProduct } from "../../redux/slices/dataSlice"
-import { toggleCart } from "../../redux/slices/actionSlice"
+import { increment, decrement, deleteProduct } from "../../redux/slices/dataSlice";
+import { toggleCart } from "../../redux/slices/actionSlice";
 
 const CartSlider = () => {
   const products = useSelector((state) => state.data.products);
@@ -25,7 +25,7 @@ const CartSlider = () => {
   }, []);
 
   return (
-    <div className="fixed w-full h-full bg-black/35 top-0 left-0 z-50 flex">
+    <div className="fixed w-full h-full bg-black/50 top-0 left-0 z-50 flex">
       {/* Clickable Background */}
       <div
         className="flex-1 h-full"
@@ -43,13 +43,13 @@ const CartSlider = () => {
         {/* Cart Content */}
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="w-full h-[10%] flex justify-between items-center px-4 py-4">
+          <div className="w-full h-[10%] flex justify-between items-center px-4 py-4 bg-[#4361ee] rounded-b-none shadow-md">
             <CgCloseR
               size={30}
-              className="cursor-pointer hover:text-[#EA005E]"
+              className="cursor-pointer text-white hover:text-[#f0f0f0] transition-all"
               onClick={() => dispatch(toggleCart())}
             />
-            <p className="text-4xl font-anton font-medium">CART</p>
+            <p className="text-3xl font-anton font-medium text-white">CART</p>
           </div>
 
           {/* Cart Body (Scrollable) */}
@@ -57,41 +57,41 @@ const CartSlider = () => {
             {products.map((i) => (
               <div
                 key={i.id}
-                className="w-full h-24 bg-white mb-3 flex items-center ring-1 ring-gray-200 rounded-lg shadow-sm hover:ring-[#EA005E] transition-all"
+                className="w-full h-24 bg-white mb-3 flex items-center ring-1 ring-gray-200 rounded-lg shadow-sm hover:ring-[#4361ee] transition-all transform hover:scale-105"
               >
                 {/* Product Image */}
                 <div
-                  className="w-[20%] h-[80%] bg-contain bg-center bg-no-repeat rounded-l-md"
+                  className="w-[20%] h-[80%] bg-contain bg-center bg-no-repeat rounded-l-md aspect-square"
                   style={{ backgroundImage: `url(${i.image})` }}
                 ></div>
 
                 {/* Product Details */}
                 <div className="w-[70%] h-full px-2 py-3">
                   <div className="w-full h-[40%] flex items-center">
-                    <p className="font-semibold text-sm truncate">{i.name}</p>
+                    <p className="font-semibold text-sm text-gray-800 truncate">{i.name}</p>
                   </div>
-                  <div className="w-full h-[20%] flex items-center justify-between text-sm">
+                  <div className="w-full h-[20%] flex items-center justify-between text-sm text-gray-600">
                     <p>Quantity:</p>
                     <div className="flex items-center gap-2">
                       <IoMdArrowDropleftCircle
-                        className="cursor-pointer hover:text-[#EA005E]"
+                        className="cursor-pointer hover:text-[#4361ee] transition-all"
                         onClick={() => dispatch(decrement(i.id))}
                       />
                       <input
                         type="text"
                         placeholder={i.quantity}
                         disabled
-                        className="w-[10%] h-full text-center border-none outline-none bg-transparent"
+                        className="w-[10%] h-full text-center border-none outline-none bg-transparent text-gray-700"
                       />
                       <IoMdArrowDroprightCircle
-                        className="cursor-pointer hover:text-[#EA005E]"
+                        className="cursor-pointer hover:text-[#4361ee] transition-all"
                         onClick={() => dispatch(increment(i.id))}
                       />
                     </div>
                   </div>
-                  <div className="w-full h-[40%] text-sm flex items-center gap-6 pt-2">
+                  <div className="w-full h-[40%] text-sm text-gray-800 flex items-center gap-6 pt-2">
                     <p>Total Price:</p>
-                    <p>{`${parseInt(i.price) * i.quantity} DH`}</p>
+                    <p className="font-semibold text-lg">{`${parseInt(i.price) * i.quantity} DH`}</p>
                   </div>
                 </div>
 
@@ -99,7 +99,7 @@ const CartSlider = () => {
                 <div className="w-[10%] h-[80%] flex items-center justify-center">
                   <RiDeleteBinFill
                     size={25}
-                    className="cursor-pointer text-red-600 hover:text-red-800"
+                    className="cursor-pointer text-red-600 hover:text-red-800 transition-all"
                     onClick={() => dispatch(deleteProduct(i.id))}
                   />
                 </div>
@@ -108,28 +108,35 @@ const CartSlider = () => {
           </div>
 
           {/* Footer */}
-          <div className="w-full h-[20%] px-4 py-2 bg-black/5 flex flex-col">
-            <div className="flex justify-between text-sm text-black/70">
+          <div className="w-full h-[20%] px-4 py-2 bg-black/5 flex flex-col rounded-b-lg shadow-md">
+            <div className="flex justify-between text-sm text-gray-800">
               <div>
                 <p className="font-medium">Products:</p>
                 <p>{products.length}</p>
               </div>
               <div>
                 <p className="font-medium text-lg">Total (TVA included):</p>
-                <p>{total + " DH"}</p>
+                <motion.p
+                  className="font-semibold text-xl text-black/60"
+                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {total + " DH"}
+                </motion.p>
               </div>
             </div>
 
-            <div className="w-full flex items-center justify-between mt-4">
+            <div className="w-full flex items-center justify-between my-2">
               <Link
                 to="/cart"
-                className="w-[48%] bg-black font-anton text-center py-2 text-xl rounded-md text-white hover:bg-[#EA005E] transition-colors"
+                className="w-[48%] bg-[#4361ee] font-anton text-center py-2 text-xl rounded-md text-white hover:bg-white hover:text-[#4361ee] hover:ring-2 hover:ring-[#4361ee] transition-all"
               >
                 Go To Cart
               </Link>
               <Link
                 to="/checkout"
-                className="w-[48%] bg-[#EA005E] text-white font-anton text-center py-2 text-xl rounded-md hover:bg-black transition-colors"
+                className="w-[48%] bg-black text-white font-anton text-center py-2 text-xl rounded-md hover:bg-white hover:ring-2 hover:ring-black hover:text-black transition-all"
               >
                 Checkout
               </Link>

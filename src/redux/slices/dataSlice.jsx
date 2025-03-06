@@ -17,6 +17,10 @@ import phone from "../../../public/phone.png";
 import game from "../../../public/game.png";
 import gpu from "../../../public/gpu.png";
 import headset from "../../../public/headset.png";
+import banner1 from "../../../public/banner1.png"
+import banner2 from "../../../public/banner2.png"
+import banner3 from "../../../public/banner3.png"
+import banner4 from "../../../public/banner4.png"
 
 const initialState = {
   products: [
@@ -173,6 +177,25 @@ const initialState = {
       image:headset,
       name:"accessories",
     }
+  ],
+
+  heroSlides: [
+    {
+      id:1,
+      img:banner1,
+    },
+    {
+      id:2,
+      img:banner2,
+    },
+    {
+      id:3,
+      img:banner3,
+    },
+    {
+      id:4,
+      img:banner4,
+    },
   ],
 };
 
