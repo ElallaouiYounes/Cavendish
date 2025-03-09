@@ -22,7 +22,7 @@ const Shopbycategorie = () => {
       {/* Content */}
       <div className="w-full h-[85%] py-4 max-sm:py-0 flex items-center gap-3 lg:flex-row md:flex-col max-sm:flex-col">
         {/* Trends */}
-        <div className="lg:w-1/2 lg:h-full md:h-[60%] max-sm:h-[50%] md:w-full max-sm:w-full h-full ring-1 ring-black/60 rounded-sm bg-[#4361ee]">
+        <div className="lg:w-1/2 lg:h-full md:h-[60%] max-sm:h-[50%] md:w-full max-sm:w-full h-full ring-1 ring-black/60 rounded-sm bg-gradient-to-r from-[#4361ee] via-[#2a4ac8] to-[#000000]">
           <div className="w-full h-[30%] px-5 flex gap-2 flex-col justify-center">
             <div className="text-4xl text-white font-rubik font-extrabold max-sm:text-3xl max-sm:mt-2">
               Trend Items
