@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const More = () => {
   const products = useSelector((state) => state.data.products);
@@ -52,7 +53,7 @@ const More = () => {
                 </p>
               </div>
               <div className="bg-black text-white text-center py-1 rounded-sm font-bold cursor-pointer mt-1">
-                Check It Out
+                  <Link to={`product/${product.id}`} >Check It Out</Link>
               </div>
             </div>
           </div>

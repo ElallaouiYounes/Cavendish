@@ -3,11 +3,11 @@ import { LuSearch } from "react-icons/lu";
 import SearchBar from "./SearchBar";
 import NavButtons from "./NavButtons";
 import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
+ const navigate = useNavigate()
   const SearchFor = (e) => {
     e.preventDefault();
     console.log(searchQuery);
@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="w-full h-[65%] flex justify-between items-center">
         {/* logo */}
         <div className="flex items-center text-4xl font-serif gap-1 cursor-pointer text-black/85">
-          <p>Cavendish</p>
+              <button onClick={() => navigate('/')} >Cavendish</button>
         </div>
 
         {/* search bar */}
