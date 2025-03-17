@@ -1,15 +1,23 @@
-import React, { useEffect } from "react";
 import { CgCloseR } from "react-icons/cg";
 import { RiDeleteBinFill } from "react-icons/ri";
-import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
+import {
+  IoMdArrowDropleftCircle,
+  IoMdArrowDroprightCircle,
+} from "react-icons/io";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, deleteProduct } from "../../redux/slices/dataSlice";
+import {
+  increment,
+  decrement,
+  deleteProduct,
+} from "../../redux/slices/cartSlice";
 import { toggleCart } from "../../redux/slices/actionSlice";
+import { useEffect } from "react";
 
 const CartSlider = () => {
-  const products = useSelector((state) => state.data.products);
+  const products = useSelector((state) => state.cart.cartProduct);
+
   const dispatch = useDispatch();
 
   const total = products.reduce((acc, curr) => {
@@ -68,7 +76,9 @@ const CartSlider = () => {
                 {/* Product Details */}
                 <div className="w-[70%] h-full px-2 py-3">
                   <div className="w-full h-[40%] flex items-center">
-                    <p className="font-semibold text-sm text-gray-800 truncate">{i.name}</p>
+                    <p className="font-semibold text-sm text-gray-800 truncate">
+                      {i.name}
+                    </p>
                   </div>
                   <div className="w-full h-[20%] flex items-center justify-between text-sm text-gray-600">
                     <p>Quantity:</p>
@@ -91,7 +101,9 @@ const CartSlider = () => {
                   </div>
                   <div className="w-full h-[40%] text-sm text-gray-800 flex items-center gap-6 pt-2">
                     <p>Total Price:</p>
-                    <p className="font-semibold text-lg">{`${parseInt(i.price) * i.quantity} DH`}</p>
+                    <p className="font-semibold text-lg">{`${
+                      parseInt(i.price) * i.quantity
+                    } DH`}</p>
                   </div>
                 </div>
 
