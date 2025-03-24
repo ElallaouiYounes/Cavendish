@@ -9,6 +9,7 @@ export default {
         teko: ["Teko", "sans-serif"],
         rubik: ["Rubik", "sans-serif"],
         bagel: ["Bagel Fat One", "cursive"],
+        shrikhand : ["Shrikhand", "sans-serif"],
       },
       colors: {
         creamy: "#fff5cf",

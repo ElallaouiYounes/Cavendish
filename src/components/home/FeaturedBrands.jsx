@@ -27,11 +27,11 @@ const FeaturedBrands = () => {
         <h2 className="text-3xl font-bold">Featured Brands</h2>
       </div>
 
-      <div className="flex gap-4 overflow-x-auto mt-4 scrollbar-hide items-center">
+      <div className="flex gap-4 overflow-x-auto mt-4 scrollbar-hide items-center border-t border-gray-200 pt-4">
         {brands.map((brand, index) => (
           <div
             key={index}
-            className="min-w-[120px] bg-gray-100 p-4 rounded-xl flex items-center justify-center"
+            className="min-w-[120px] bg-white shadow-md my-1 p-4 rounded-xl flex items-center justify-center"
           >
             <img 
               src={brand.logo} 

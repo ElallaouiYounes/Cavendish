@@ -182,11 +182,11 @@ const initialState = {
   heroSlides: [
     {
       id:1,
-      img:banner1,
+      img:banner2,
     },
     {
       id:2,
-      img:banner2,
+      img:banner1,
     },
     {
       id:3,

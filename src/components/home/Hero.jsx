@@ -46,7 +46,7 @@ const Hero = () => {
 
   return (
     <div 
-      className="relative lg:h-[24em] md:h-[18em] max-sm:h-[12em] mt-24 px-5 py-4 max-sm:px-2 overflow-hidden"
+      className="relative lg:h-[24em] md:h-[18em] max-sm:h-[12em] mt-[80px] py-4 overflow-hidden"
       onTouchStart={(e) => handleStart(e.touches[0].clientX)}
       onTouchMove={(e) => handleMove(e.touches[0].clientX)}
       onTouchEnd={handleEnd}
@@ -56,7 +56,7 @@ const Hero = () => {
       onMouseLeave={handleEnd}
     >
       <div
-        className="w-full h-full bg-[#4361ee] rounded-sm bg-cover bg-center bg-no-repeat aspect-square"
+        className="w-full h-full bg-[#4361ee]  bg-cover bg-center bg-no-repeat aspect-square"
         style={{ backgroundImage: `url(${heroSlides[currentIndex].img})` }}
       ></div>
 

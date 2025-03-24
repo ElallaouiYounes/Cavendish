@@ -15,13 +15,13 @@ const Navbar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-full shadow-md bg-white z-20 h-24 pb-2 px-5"
+      className="fixed top-0 left-0 w-full shadow-md bg-white z-20 h-24 pb-2 px-5 max-sm:px-2"
     >
       {/* first row */}
       <div className="w-full h-[65%] flex justify-between items-center">
         {/* logo */}
-        <div className="flex items-center text-4xl font-serif gap-1 cursor-pointer text-black/85">
-          <p>Cavendish</p>
+        <div className="flex items-center text-4xl font-shrikhand gap-1 cursor-pointer text-black/85">
+          <p><span className="text-[#4361ee] text-5xl">C</span>avendish</p>
         </div>
 
         {/* search bar */}
