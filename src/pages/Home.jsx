@@ -8,6 +8,7 @@ import Hero from "../components/home/Hero";
 import More from "../components/home/More";
 import Shopbycategorie from "../components/home/Shopbycategorie";
 import TopSales from "../components/home/TopSales";
+import FeaturedBrands from "../components/home/FeaturedBrands";
 
 const Home = () => {
   const openCart = useSelector((state) => state.Actions.openCart);
@@ -21,6 +22,7 @@ const Home = () => {
       <Hero />
       <TopSales />
       <Shopbycategorie />
+      <FeaturedBrands />
       <More />
       <Footer />
     </div>

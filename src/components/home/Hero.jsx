@@ -1,53 +1,76 @@
-import React, { useState } from "react";
-import { AiFillCaretRight, AiFillCaretLeft } from "react-icons/ai";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
 const Hero = () => {
-  const [show, setShow] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const heroSlides = useSelector((state) => state.data.heroSlides);
+  const touchStartX = useRef(0);
+  const touchCurrentX = useRef(0);
+  const isDragging = useRef(false);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
-    );
+    setCurrentIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleStart = (clientX) => {
+    touchStartX.current = clientX;
+    touchCurrentX.current = clientX;
+    isDragging.current = true;
+  };
+
+  const handleMove = (clientX) => {
+    if (!isDragging.current) return;
+    touchCurrentX.current = clientX;
+  };
+
+  const handleEnd = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    const dragDistance = touchStartX.current - touchCurrentX.current;
+    
+    if (dragDistance > 50) {
+      nextSlide();
+    } else if (dragDistance < -50) {
+      prevSlide();
+    }
   };
 
   return (
-    <div
-      className="lg:h-[24em] md:h-[18em] max-sm:h-[12em] mt-24 px-5 py-4"
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
+    <div 
+      className="relative lg:h-[24em] md:h-[18em] max-sm:h-[12em] mt-24 px-5 py-4 max-sm:px-2 overflow-hidden"
+      onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+      onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+      onTouchEnd={handleEnd}
+      onMouseDown={(e) => handleStart(e.clientX)}
+      onMouseMove={(e) => handleMove(e.clientX)}
+      onMouseUp={handleEnd}
+      onMouseLeave={handleEnd}
     >
-      {/* --------------------------- */}
-      {show && (
-        <div
-          className="w-10 h-14 max-sm:w-7 max-sm:h-8 bg-black/50 absolute left-0 lg:top-[16em] md:top-[13.5em] max-sm:top-[11em] rounded-r-sm flex items-center cursor-pointer"
-          onClick={prevSlide}
-        >
-          <AiFillCaretLeft color="#ffffff" size={50} />
-        </div>
-      )}
-      {/* --------------------------- */}
-
       <div
         className="w-full h-full bg-[#4361ee] rounded-sm bg-cover bg-center bg-no-repeat aspect-square"
         style={{ backgroundImage: `url(${heroSlides[currentIndex].img})` }}
       ></div>
 
-      {/* --------------------------- */}
-      {show && (
-        <div
-          className="w-10 h-14 max-sm:w-7 max-sm:h-8 bg-black/50 absolute right-0 lg:top-[16em] md:top-[13.5em] max-sm:top-[11em] rounded-l-sm flex items-center justify-center cursor-pointer"
-          onClick={nextSlide}
-        >
-          <AiFillCaretRight color="#ffffff" size={40} />
-        </div>
-      )}
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        {heroSlides.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-4 h-4 rounded-full cursor-pointer transition-all duration-300 ${
+              currentIndex === index ? "bg-[#4361ee]" : "bg-black/50"
+            }`}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 };
