@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Notfound from './components/Notfound'
 import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
       <Route path="/categories" element={<Notfound />} />
       <Route path="/categories/:name" element={<Notfound />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Notfound />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<Notfound />} />
       <Route path="/checkout" element={<Notfound />} />
       <Route path="/about" element={<Notfound />} />
