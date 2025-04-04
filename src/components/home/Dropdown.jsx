@@ -4,7 +4,6 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 const Dropdown = () => {
   const [radius, setRadius] = useState("rounded-full");
   const [show, setShow] = useState(false);

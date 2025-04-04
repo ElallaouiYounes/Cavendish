@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
@@ -7,7 +6,6 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FaRegUser } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoMdCloseCircle } from "react-icons/io";
-import { HiSquares2X2 } from "react-icons/hi2";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
 import User from "./User";
