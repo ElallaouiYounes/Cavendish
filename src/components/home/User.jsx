@@ -35,7 +35,7 @@ const User = () => {
               </span>
             </Link>
             <Link
-              to="/login"
+              to="/signup"
               className="w-[48%] h-[60%] bg-[#4361ee] text-white rounded-md font-anton flex items-center justify-center overflow-hidden group relative"
             >
               <span className="absolute inset-0 bg-black -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>

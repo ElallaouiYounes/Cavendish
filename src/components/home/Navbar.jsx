@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { LuSearch } from "react-icons/lu";
 import SearchBar from "./SearchBar";
 import NavButtons from "./NavButtons";
 import Dropdown from "./Dropdown";
@@ -12,11 +11,8 @@ const Navbar = () => {
     e.preventDefault();
     console.log(searchQuery);
   };
-
   return (
-    <div
-      className="fixed top-0 left-0 w-full shadow-md bg-white z-20 h-24 pb-2 px-5"
-    >
+    <div className="fixed top-0 left-0 w-full shadow-md bg-white z-20 h-24 pb-2 px-5 max-sm:px-2">
       {/* first row */}
       <div className="w-full h-[65%] flex justify-between items-center">
         {/* logo */}
@@ -24,26 +20,26 @@ const Navbar = () => {
               <button onClick={() => navigate('/')} >Cavendish</button>
         </div>
 
-        {/* search bar */}
-        <form
-          onSubmit={SearchFor}
-          className="flex items-center justify-center h-[70%] w-[30%] bg-black/10 rounded-full lg:flex md:hidden sm:hidden max-sm:hidden"
-        >
+        {/* Middle Section - Search */}
+        <div className="hidden md:flex items-center relative mx-4 flex-1 max-w-xl">
+          <div className="absolute left-3 text-gray-400 dark:text-gray-500">
+            <RiSearchLine />
+          </div>
           <input
             type="text"
-            placeholder="What are you looking for?"
-            className="w-[90%] px-6 rounded-l-full h-full border-none outline-none bg-transparent"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search for orders, products, customers..."
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border-none focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
 
           <button
-            className="w-[10%] h-full rounded-r-full flex items-center "
-            type="submit"
+            className="absolute right-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+            onClick={Effacer}
           >
-            <LuSearch size={20} />
+            <RiCloseLine />
           </button>
-        </form>
+        </div>
 
         {/* buttons */}
         <div>
