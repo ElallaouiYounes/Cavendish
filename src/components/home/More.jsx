@@ -3,7 +3,6 @@ import { FaStar } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
-
 const More = () => {
   const products = useSelector((state) => state.data.products);
   const [items, setItems] = useState(12);
@@ -72,14 +71,9 @@ const More = () => {
                   {product.rating + " | " + product.sold + " sold"}
                 </p>
               </div>
-              <Link
-                to={`/product/${product.id}`}
-                className="bg-black text-white border border-black text-center py-1 rounded-sm font-bold cursor-pointer mt-1 
-             transition-all duration-300 ease-in-out 
-             hover:bg-white hover:text-black hover:shadow-md"
-              >
-                Check It Out
-              </Link>
+              <div className="bg-black text-white text-center py-1 rounded-sm font-bold cursor-pointer mt-1">
+                  <Link to={`product/${product.id}`} >Check It Out</Link>
+              </div>
             </div>
           </div>
         ))}
