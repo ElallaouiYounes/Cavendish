@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import SearchBar from "./SearchBar";
 import NavButtons from "./NavButtons";
 import Dropdown from "./Dropdown";
 import { Link, useNavigate } from "react-router-dom";
+import { RiSearchLine, RiCloseLine } from "react-icons/ri";
 
 const Navbar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
- const navigate = useNavigate()
-  const SearchFor = (e) => {
-    e.preventDefault();
-    console.log(searchQuery);
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate()
+  const Effacer = () => {
+    setSearch("");
   };
   return (
     <div className="fixed top-0 left-0 w-full shadow-md bg-white z-20 h-24 pb-2 px-5 max-sm:px-2">
