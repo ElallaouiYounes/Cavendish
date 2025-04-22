@@ -37,7 +37,7 @@ const Card = ({ product }) => {
   const dispalName = name.length >= 24 ? name.slice(0, 22) + "..." : name;
   return (
     <div
-      className="flex flex-col justify-center items-center border-2 rounded-sm w-[230px] h-[300px] m-4 py-2 cursor-pointer transform hover:scale-105 transition duration-300 ease-in-out"
+      className="flex flex-col justify-center items-center border-2 rounded-sm w-[230px] h-[300px] mx-1 my-2 py-2 cursor-pointer transform hover:scale-105 transition duration-300 ease-in-out"
       onMouseEnter={showAddToCart}
       onMouseLeave={showAddToCart}
     >

@@ -15,8 +15,8 @@ const Shopbycategorie = () => {
   return (
     <div className="w-full lg:h-[30em] md:h-[50em] max-sm:h-[40em] mt-5 px-5">
       {/* Title */}
-      <div className="w-full h-[15%] py-3 flex items-center justify-center font-rubik font-bold text-5xl max-sm:text-4xl">
-        <p>Shop by categorie</p>
+      <div className="w-full h-[15%] py-3 flex items-center justify-center font-rubik font-semibold text-5xl max-sm:text-4xl">
+        <p>Shop by categories</p>
       </div>
 
       {/* Content */}
@@ -32,12 +32,12 @@ const Shopbycategorie = () => {
             </div>
           </div>
 
-          <div className="w-full h-[70%]  px-5 flex justify-between items-center">
+          <div className="w-full h-[70%] px-5 flex justify-between items-center">
             {products.slice(0, 3).map((product) => (
               <Link to={`/product/${product.id}`} className="h-[80%] w-[30%]  rounded-sm px-2 py-2 bg-white cursor-pointer" key={product.id}>
-                <div className="w-full lg:h-[60%] md:h-[55%] max-sm:h-[60%] rounded-sm bg-contain bg bg-center bg-no-repeat" style={{backgroundImage:`url(${product.image})`}}></div>
+                <div className="w-full lg:h-[60%] md:h-[55%] max-sm:h-[50%] rounded-sm bg-contain bg bg-center bg-no-repeat" style={{backgroundImage:`url(${product.image})`}}></div>
 
-                <div className="w-full h-[40%] max-sm:h-[55%] pt-1 text-sm leading-tight ">
+                <div className="w-full h-[40%] max-sm:h-[50%] pt-1 text-sm leading-tight ">
                   <p className="font-semibold max-sm:text-[9.1px]">
                     {product.name.length > 20
                       ? product.name.slice(0, 17) + "..."
@@ -63,9 +63,9 @@ const Shopbycategorie = () => {
         <div className="lg:w-1/2 lg:h-full md:h-[60%] max-sm:h-[60%] md:w-full max-sm:w-full h-full flex flex-wrap gap-1">
           <Link
             to="/categories/desktops"
-            className="w-[49.67%] h-[32.7%] max-sm:w-[49.48%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
+            className="w-[49.67%] h-[32.7%] max-sm:w-[49.40%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
           >
-            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[26px]">
+            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[22px]">
               <p>Desktops</p>
             </div>
             <div className="w-1/2 h-full flex items-center justify-center pt-8 md:pt-4 px-1">
@@ -78,9 +78,9 @@ const Shopbycategorie = () => {
 
           <Link
             to="/categories/laptops"
-            className="w-[49.67%] h-[32.7%] max-sm:w-[49.48%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
+            className="w-[49.67%] h-[32.7%] max-sm:w-[49.40%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
           >
-            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[26px]">
+            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[22px]">
               <p>Laptops</p>
             </div>
             <div className="w-1/2 h-full flex items-center justify-center pt-8 md:pt-4 px-1">
@@ -93,9 +93,9 @@ const Shopbycategorie = () => {
 
           <Link
             to="/categories/phones"
-            className="w-[49.67%] h-[32.7%] max-sm:w-[49.48%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
+            className="w-[49.67%] h-[32.7%] max-sm:w-[49.40%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
           >
-            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[26px]">
+            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[22px]">
               <p>Phones</p>
             </div>
             <div className="w-1/2 h-full flex items-center justify-center pt-8 md:pt-4 px-1">
@@ -108,9 +108,9 @@ const Shopbycategorie = () => {
 
           <Link
             to="/categories/games"
-            className="w-[49.67%] h-[32.7%] max-sm:w-[49.48%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
+            className="w-[49.67%] h-[32.7%] max-sm:w-[49.40%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
           >
-            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[26px]">
+            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[22px]">
               <p>Games</p>
             </div>
             <div className="w-1/2 h-full flex items-center justify-center pt-8 md:pt-4 px-1">
@@ -123,9 +123,9 @@ const Shopbycategorie = () => {
 
           <Link
             to="/categories/components"
-            className="w-[49.67%] h-[32.7%] max-sm:w-[49.48%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
+            className="w-[49.67%] h-[32.7%] max-sm:w-[49.40%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
           >
-            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[26px]">
+            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[22px]">
               <p>Components</p>
             </div>
             <div className="w-1/2 h-full flex items-center justify-center pt-8 md:pt-4 px-1">
@@ -138,9 +138,9 @@ const Shopbycategorie = () => {
 
           <Link
             to="/categories/accessories"
-            className="w-[49.67%] h-[32.7%] max-sm:w-[49.48%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
+            className="w-[49.67%] h-[32.7%] max-sm:w-[49.40%] rounded-sm ring-1 ring-black/60 text-black/90 cursor-pointer flex"
           >
-            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[26px]">
+            <div className="h-full w-1/2 text-3xl font-bold font-rubik relative z-10 pl-2 pt-1 max-sm:text-[22px]">
               <p>Accessories</p>
             </div>
             <div className="w-1/2 h-full flex items-center justify-center pt-8 md:pt-4 px-1">

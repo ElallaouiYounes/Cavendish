@@ -19,8 +19,8 @@ const TopSales = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center mt-16 mb-10">
-      <div className="text-center font-bold text-5xl mb-6">TOP SALES</div>
+    <div className="w-full flex flex-col justify-center mt-10 mb-10">
+      <div className="text-center font-rubik font-semibold text-5xl max-sm:text-4xl mb-6">TOP SALES</div>
       <div className="w-full relative">
         <button
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full p-2 transition duration-200"

@@ -45,8 +45,26 @@ const authSlice = createSlice({
             state.isLogged = false;
             state.loggedUser = null;
         },
+
+        // signup
+        signUP:(state,action)=>{
+            const userExist=state.users.find(user=>user.email===action.payload.email);
+            if(!userExist){
+                const newUser={
+                    id:state.users.length+1,
+                    username:action.payload.username,
+                    email:action.payload.email,
+                    password:action.payload.password,
+                }
+                state.users.push(newUser);
+                state.isLogged = true;
+                state.loggedUser = newUser;
+            } else {
+                console.log("Email déjà utilisé !");
+            }
+        }
     },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout,signUP } = authSlice.actions;
 export default authSlice.reducer;
